@@ -20,18 +20,9 @@ export interface HeaderProps {
   rightContent?: React.ReactNode;  /* custom JSX on the far-right of the row */
 }
 
-/** Default navigation for the BetterFutureUK site. Edit these per-site. */
-const DEFAULT_NAV: NavItem[] = [
-  { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
-];
-
 export function Header({
-  brandName = 'BetterFutureUK',
-  navItems = DEFAULT_NAV,
+  brandName = 'My Site',
+  navItems = [],
   rightContent,
 }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);

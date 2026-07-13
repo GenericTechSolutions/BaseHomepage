@@ -13,16 +13,10 @@ export interface FooterProps {
   legalLinks?: Array<{ label: string; href: string }>;
 }
 
-/** Default legal links for the BetterFutureUK site. */
-const DEFAULT_LEGAL: Array<{ label: string; href: string }> = [
-  // { label: 'Privacy', href: '/privacy' },
-  // { label: 'Terms', href: '/terms' },
-];
-
 export function Footer({
-  brandName = 'BetterFutureUK',
-  poweredBy = 'Powered by Tech Solutions',
-  legalLinks = DEFAULT_LEGAL,
+  brandName = 'My Site',
+  poweredBy,
+  legalLinks = [],
 }: FooterProps) {
   const year = new Date().getFullYear();
 
