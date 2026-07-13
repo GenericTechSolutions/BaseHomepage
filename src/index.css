@@ -295,12 +295,6 @@ button.home__btn:hover {
   padding-inline: var(--space-xl);
   gap: var(--space-xl);
   max-width: 100%;
-
-  /* Purple translucent gradient on top, image beneath it — comma-separated layers stack top-to-bottom. */
-  background-image: linear-gradient(var(--bg-base), rgba(38, 3, 97, 0.644)), url('/title-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .home-hero__title {

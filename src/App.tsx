@@ -19,20 +19,24 @@ function App() {
   return (
     <div className="home">
       {/* ---- Header / Toolbar ---- */}
-      <Header brandName="BetterFutureUK" navItems={NAV_ITEMS} />
+      <Header brandName="My Site" navItems={NAV_ITEMS} />
 
       {/* ---- Main content ---- */}
       <main className="home__content">
 
         {/* Hero section — full viewport height */}
         <section id="hero" className="home-hero">
-          <h1 className="home-hero__title">Better Future</h1>
-          <p className="home-hero__subtitle">Be Happier, Live Longer, Enjoy More</p>
-          <p className="home-hero__tagline">Speaker with mental health experience</p>
-          <a href="#features" className="home-hero__cta home__btn home__btn--primary home__btn--large">Learn More</a>
+          <h1 className="home-hero__title">Welcome to My Site</h1>
+          <p className="home-hero__subtitle">Your tagline goes here.</p>
+          <p className="home-hero__tagline">
+            A short description of what you do — tell visitors why they should care in 1-2 sentences.
+          </p>
+          <a href="#features" className="home-hero__cta home__btn home__btn--primary home__btn--large">
+            Explore Features
+          </a>
         </section>
         {/* ---- Footer ---- */}
-        <Footer brandName="BetterFutureUK" legalLinks={LEGAL_LINKS} />
+        <Footer brandName="My Site" legalLinks={LEGAL_LINKS} />
 
       </main>
     </div>
