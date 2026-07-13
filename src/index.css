@@ -5,9 +5,11 @@
 
 :root {
   /* --- Backgrounds --- */
-  --bg-base: #0b0f19;           /* root / canvas background */
-  --bg-panel: #121223;          /* header / footer bg */
-  --bg-surface: #0f0f1e;        /* cards / dialogs / overlays */
+  --bg-base:       #0b0f19;     /* root / canvas background */
+  --bg-panel:      #121223;     /* header / footer bg */
+  --bg-surface:    #0f0f1e;     /* cards / dialogs / overlays */
+  --bg-section-a:  #0b0f19;     /* alternating section bg (odd) */
+  --bg-section-b:  #0f1322;     /* alternating section bg (even) */
 
   /* --- Text --- */
   --text-primary: #e2e8f0;      /* main body text */
@@ -166,6 +168,32 @@ a:hover {
   .home__toolbar {
     position: relative;
   }
+
+  /* ---- Mobile nav dropdown (positioned below the fixed toolbar) ---- */
+  .header__nav-mobile-wrap {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: 51;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border-card);
+    backdrop-filter: blur(var(--blur-lg));
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    animation: slide-down var(--transition-duration) ease-out;
+  }
+
+  .header__nav-mobile-wrap div > * {
+    margin-top: var(--space-sm);
+  }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ============================================================
@@ -282,6 +310,39 @@ button.home__btn:hover {
   box-sizing: border-box;
 }
 
+/* ---- Alternating section backgrounds ---- */
+.home-section--even {
+  background: var(--bg-section-a);
+}
+
+.home-section--odd {
+  background: var(--bg-section-b);
+}
+
+/* ---- Section heading / subtitle (smaller than hero) ---- */
+
+.home-section__title {
+  margin: 0;
+  font-size: calc(var(--text-title) * 2.5);
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.home-section__subtitle {
+  margin: 0;
+  font-size: var(--text-subtitle);
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* ---- Utility spacer (pushes siblings to the far end) ---- */
+
+.home__spacer {
+  flex: 1 1 auto;
+}
+
 /* ---- Hero section ---- */
 .home-hero {
   min-height: 100vh;
@@ -349,4 +410,66 @@ button.home__btn:hover {
   margin: 0;
   font-size: var(--text-small);
   color: var(--text-disabled);
+}
+
+/* ---- Footer row / link ---- */
+
+.home-footer__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.home-footer__link {
+  font-size: var(--text-small);
+  color: var(--text-disabled);
+}
+
+/* ---- Features card grid ---- */
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+  max-width: 960px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.features__card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+}
+
+.features__card-title {
+  font-size: var(--text-title);
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+.features__card-text {
+  font-size: var(--text-body);
+  color: var(--text-muted);
+}
+
+/* ---- About content wrapper ---- */
+
+.about__wrapper {
+  max-width: 640px;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: var(--space-2xl);
+}
+
+.about__text {
+  font-size: var(--text-subtitle);
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.about__text--secondary {
+  margin-top: var(--space-lg);
 }

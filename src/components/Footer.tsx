@@ -22,14 +22,14 @@ export function Footer({
 
   return (
     <footer className="home-footer">
-      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }}>
+      <div className="home-footer__row">
         <p>
           &copy; {year} {brandName}
           {poweredBy ? ` - ${poweredBy}` : ''}
           . All rights reserved.
         </p>
         {legalLinks.map((link) => (
-          <a key={link.href} href={link.href} style={{ fontSize: 'var(--text-small)', color: 'var(--text-disabled)' }}>
+          <a key={link.href} href={link.href} className="home-footer__link">
             {link.label}
           </a>
         ))}
